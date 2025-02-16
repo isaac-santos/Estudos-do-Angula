@@ -11,6 +11,11 @@ export class TemplateBindingComponent {
   public name = 'Isaac de Jesus';
   public age = 27;
   public condition = this.age < 30 ? "novo" : "velho";
+  
+  public isDisabled = true;
+  public srcValue = '';
+
+  
 
   public sum(val1:number, val2:number) {
     return val1 + val2;
