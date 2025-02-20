@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './meu-componente.component.css'
 })
 export class MeuComponenteComponent {
-
+  nome:string = 'Isaac';
+  idade:number = 27;
 }
