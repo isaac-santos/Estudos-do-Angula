@@ -10,7 +10,15 @@ import { Component } from '@angular/core';
 })
 export class MeuComponente04Component {
 
-  // Vetor de nomes
-  nomes:string[] = ['Ariane', 'Bruna', 'Caio', 'Denis'];
-  
+  // Variável para exibir ou ocultar o quadrado
+  exibir:boolean = true;
+
+  // Função para exibir ou ocultar o quadrado
+  acao() {
+    if(this.exibir === true) {
+      this.exibir = false
+    } else {
+      this.exibir = true
+    }
+  }
 }
