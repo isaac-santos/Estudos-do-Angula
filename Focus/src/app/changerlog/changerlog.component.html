@@ -1,0 +1,23 @@
+<h2>Novas funções</h2>
+<div>
+    <ul>
+        <li *ngFor="let func of newFunctions">
+            <strong>{{ func.Date }}: </strong> {{ func.new}}
+        </li>
+    </ul>
+    <button (click)="visto()">Visto</button>
+</div>
+
+<hr>
+
+<div>
+    <div class="container">
+        <h2>Antigas</h2>
+    </div>
+     
+    <ul>
+        <li *ngFor="let func of oldFunctions">
+            <strong>{{ func.Date }}: </strong> {{ func.new}}
+        </li>
+    </ul>
+</div>
