@@ -65,3 +65,58 @@
     }
     @default {<p>Sem dados</p>}
 }
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Exibir Resultados
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Resultados</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            @switch (resultado) {
+                @case ('Aprovado') {
+                    @for (n of aluno; track $index) {
+                        @if(n.genero === 'M' && n.nota >= 7) {
+                            <p>O aluno <strong>{{n.nome}}</strong> está Aprovado</p>
+                        }@else if(n.genero === 'F' && n.nota >= 7) {
+                            <p>A aluna <strong>{{n.nome}}</strong> está Aprovada</p>
+                        }
+                    }
+                }
+                @case('Reprovado') {
+                    @for (n of aluno; track $index) {
+                        @if(n.genero === 'M' && n.nota <= 3) {
+                            <p>O aluno <strong>{{n.nome}}</strong> foi reprovado</p>
+                        }@else if(n.genero === 'F' && n.nota <= 3) {
+                            <p>A aluna <strong>{{n.nome}}</strong> foi reprovada</p>
+                        }
+                    }
+                }
+                @case('Em exame') {
+                    @for (n of aluno; track $index) {
+                        @if(n.genero === 'M' && n.nota >= 4 && n.nota <= 6) {
+                            <p>O aluno <strong>{{n.nome}}</strong> está em exame</p>
+                        }@else if(n.genero === 'F' && n.nota >= 4 && n.nota <= 6) {
+                            <p>A aluna <strong>{{n.nome}}</strong> está em exame</p>
+                        }
+                    }@empty{
+                        <p>Não houve reprovados</p>
+                    }
+                }
+                @default {<p>Sem dados</p>}
+            }
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

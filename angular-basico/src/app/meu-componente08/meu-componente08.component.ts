@@ -20,7 +20,7 @@ export class MeuComponente08Component {
   linguagem:string='HTML';
 
   //Pratica
-  resultado:string = 'Em exame';
+  resultado:string = 'Aprovado'/*'Reprovado'*//*'Em exame'*/ ;
   aluno = [
   {
     nome: 'Jessica',
@@ -30,7 +30,17 @@ export class MeuComponente08Component {
   {
     nome: 'Erick',
     genero: 'M',
-    nota: 5
+    nota: 9
   },
+  {
+    nome: 'Pedro',
+    genero: 'M',
+    nota: 3
+  },
+  {
+    nome: 'Amanda',
+    genero: 'F',
+    nota: 10
+  }
 ];
 }
