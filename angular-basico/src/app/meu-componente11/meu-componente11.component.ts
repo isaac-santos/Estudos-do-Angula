@@ -24,4 +24,18 @@ export class MeuComponente11Component {
   // Vetor de pessoas
   vetor:Pessoa[] = [];
 
+  // Função de cadastro
+  cadastrar(){
+
+    // Cadastro no vetor
+    this.vetor.push(this.formulario.value as Pessoa);
+
+    // Limpeza dos inputs
+    this.formulario.reset();
+    
+    // Visualização via console
+    // console.table(this.vetor);
+
+  }
+
 }
