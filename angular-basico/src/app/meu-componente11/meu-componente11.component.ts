@@ -59,4 +59,18 @@ export class MeuComponente11Component {
     this.btnCadastrar = false;
   }
 
+  // Função de alteração
+  alterar(){
+
+    // Alterar vetor
+    this.vetor[this.indice] = this.formulario.value as Pessoa;
+
+    // Limpar os inputs
+    this.formulario.reset();
+
+    // Visibilidade dos botões
+    this.btnCadastrar = true;
+
+  }
+
 }
