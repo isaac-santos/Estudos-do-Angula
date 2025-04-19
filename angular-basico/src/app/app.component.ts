@@ -11,12 +11,15 @@ import { MeuComponente08Component } from './meu-componente08/meu-componente08.co
 import { MeuComponente09Component } from './meu-componente09/meu-componente09.component';
 import { MeuComponente10Component } from './meu-componente10/meu-componente10.component';
 import { MeuComponente11Component } from './meu-componente11/meu-componente11.component';
+import { MeuComponente12Component } from './meu-componente12/meu-componente12.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MeuComponenteComponent, MeuComponente02Component, MeuComponente03Component, MeuComponente04Component, MeuComponente05Component, MeuComponente06Component, MeuComponente07Component, MeuComponente08Component, MeuComponente09Component, MeuComponente10Component, MeuComponente11Component ],
+  imports: [RouterOutlet, MeuComponenteComponent, MeuComponente02Component, MeuComponente03Component, MeuComponente04Component, MeuComponente05Component, MeuComponente06Component, MeuComponente07Component, MeuComponente08Component, MeuComponente09Component, MeuComponente10Component, MeuComponente11Component,
+  MeuComponente12Component
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
