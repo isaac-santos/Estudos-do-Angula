@@ -1,15 +1,16 @@
+{{formulario.value |json}}
 <!-- FORMULÁRIO -->
- <form>
-    <input type="number" class="form-control" readonly>
-    <input type="text" class="form-control" placeholder="Nome">
-    <input type="number" class="form-control" placeholder="Valor">
+<form [formGroup]="formulario">
+    <input type="number" class="form-control" formControlName="id" readonly>
+    <input type="text"   class="form-control" formControlName="nome" placeholder="Nome">
+    <input type="number" class="form-control" formControlName="valor" placeholder="Valor">
 
-    <input type="button" class="btn btn-primary" value="Cadastrar" ngIf="btnCadastrar">
-    <input type="button" class="btn btn-primary" value="Alterar"   ngIf="!btnCadastrar">
-    <input type="button" class="btn btn-primary" value="Remover"   ngIf="!btnCadastrar">
- </form>
+    <input type="button" class="btn btn-primary" value="Cadastrar" *ngIf="btnCadastrar">
+    <input type="button" class="btn btn-primary" value="Alterar"   *ngIf="!btnCadastrar">
+    <input type="button" class="btn btn-primary" value="Remover"   *ngIf="!btnCadastrar">
+</form>
 
- <!-- TABELA -->
+<!-- TABELA -->
 <table class="table table-striped">
     <thead>
         <tr>

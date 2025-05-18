@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Produto } from '../modelo/Produto';
 import { ProdutoService } from '../servico/produto.service';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-meu-componente13',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './meu-componente13.component.html',
   styleUrl: './meu-componente13.component.css'
 })
@@ -17,6 +18,13 @@ export class MeuComponente13Component {
 
   // Visibilidade dos botões
   btnCadastrar:boolean = true;
+
+  // Objeto de formulário
+  formulario = new FormGroup({
+    id:    new FormControl(null),
+    nome:  new FormControl(null),
+    valor: new FormControl(null)
+  });
 
   // Construtor
   constructor(private servico:ProdutoService){}
