@@ -39,4 +39,15 @@ export class MeuComponente13Component {
     this.servico.selecionar().subscribe(retorno => {this.vetor = retorno});
   }
 
+  // Método para cadastrar produtos
+  cadastrar(){
+    this.servico.cadastrar(this.formulario.value as Produto)
+    .subscribe(retorno => {
+
+      this.vetor.push(retorno);
+
+      this.formulario.reset()
+    })
+  }
+
 }
