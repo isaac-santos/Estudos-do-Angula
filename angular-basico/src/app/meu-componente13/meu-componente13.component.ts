@@ -63,4 +63,30 @@ export class MeuComponente13Component {
 
   }
 
+  // Método para alterar produtos
+  alterar(){
+    this.servico.alterar(this.formulario.value as Produto)
+    .subscribe(retorno => {
+
+      // Obter o índice do objeto alterado
+      let indiceAlterado = this.vetor.findIndex(obj => {
+        return this.formulario.value.id === obj.id;
+      });
+
+      // Alterar o vetor
+      this.vetor[indiceAlterado] = retorno;
+
+      // Limpar o formulário
+      this.formulario.reset();
+
+      // Visibilidade dos botões
+      this.btnCadastrar = true;
+    })
+  }
+
+  // Método para remover produtos
+  remover(){
+    this.vetor.splice(this.)
+  }
+
 }
