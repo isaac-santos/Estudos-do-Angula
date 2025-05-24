@@ -86,7 +86,24 @@ export class MeuComponente13Component {
 
   // Método para remover produtos
   remover(){
-    this.vetor.splice(this.)
+    
+    this.servico.remover(this.formulario.value.id)
+    .subscribe(() => {
+
+      // Obter o índice do vetor que será removido
+      let indiceRemovido = this.vetor.findIndex(obj => {
+        return obj.id === this.formulario.value.id;
+      });
+
+      //Remover objeto do vetor
+      this.vetor.splice(indiceRemovido, 1);
+
+      // Limpar o formulário
+      this.formulario.reset();
+
+      // Visibilidade dos botões
+      this.btnCadastrar = true;
+    });
   }
 
 }
