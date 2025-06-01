@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Produto } from '../modelo/Produto';
 import { ProdutoService } from '../servico/produto.service';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { finalize  } from 'rxjs/operators';
 
 @Component({
   selector: 'app-meu-componente13',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './meu-componente13.component.html',
   styleUrl: './meu-componente13.component.css'
 })
@@ -16,8 +17,17 @@ export class MeuComponente13Component {
   // Vetor
   vetor:Produto[] = [];
 
+  // Vetor filtrado
+  vetorFiltrado: Produto[] = [];
+
   // Visibilidade dos botões
   btnCadastrar:boolean = true;
+
+  // Variável para guardar o texto (pratica)
+  textoBusca: string = '';
+
+  // Novo: Flag de carregamento
+  loading: boolean = true; // Inicia como true para mostrar "Carregando..."
 
   // Objeto de formulário
   formulario = new FormGroup({
@@ -36,7 +46,15 @@ export class MeuComponente13Component {
 
   // Método para selecionar todos os produtos
   selecionar(){
-    this.servico.selecionar().subscribe(retorno => {this.vetor = retorno});
+    this.loading = true; // IInicia o carregamento
+    this.servico.selecionar()
+    .pipe(
+      finalize(() => this.loading = false) // Garante que loading seja false no final (sucesso ou erro)
+    )
+    .subscribe(retorno => {
+      this.vetor = retorno;
+      this.filtrarProdutos(); // Inicializa o vetor filtrado
+    });
   }
 
   // Método para cadastrar produtos
@@ -104,6 +122,26 @@ export class MeuComponente13Component {
       // Visibilidade dos botões
       this.btnCadastrar = true;
     });
+  }
+
+  // Método para filtrar produtos
+  filtrarProdutos(): void {
+    
+    if (this.textoBusca.trim() === '') {
+      // Se o campo de busca estiver vazio, exiba todos os produtos
+      this.vetorFiltrado = [...this.vetor];// Cria copia para exibição
+    } else {
+      // Filtra o vetor com base no nome
+      this.vetorFiltrado = this.vetor.filter(produto =>
+        produto.nome?.toLowerCase().includes(this.textoBusca.trim().toLowerCase())
+      )
+    }
+  }
+  
+  // Limpar a busca
+  limparBusca(): void {
+    this.textoBusca = ''; // Limpa o termo de busca
+    this.filtrarProdutos(); // Chama o método de filtro para exibir todos os produtos
   }
 
 }

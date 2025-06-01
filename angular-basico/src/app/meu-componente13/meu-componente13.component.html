@@ -3,10 +3,21 @@
     <input type="number" class="form-control" formControlName="id" readonly>
     <input type="text"   class="form-control" formControlName="nome" placeholder="Nome">
     <input type="number" class="form-control" formControlName="valor" placeholder="Valor">
+    <!-- campo de pesquisa -->
+    <input 
+        type="search" 
+        class="form-control"
+        placeholder="Pesquise" 
+        name="busca"
+        [(ngModel)]="textoBusca"
+        (input)="filtrarProdutos()"
+        [ngModelOptions]="{standalone: true}"
+    >
 
     <input type="button" class="btn btn-primary" value="Cadastrar" *ngIf="btnCadastrar" (click)="cadastrar()">
     <input type="button" class="btn btn-primary" value="Alterar"   *ngIf="!btnCadastrar" (click)="alterar()">
     <input type="button" class="btn btn-primary" value="Remover"   *ngIf="!btnCadastrar" (click)="remover()">
+        
 </form>
 
 <!-- TABELA -->
@@ -21,11 +32,14 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let v of vetor; let indice = index">
+        <tr *ngFor="let v of vetorFiltrado; let indice = index">
             <td>{{indice+1}}</td>
             <td>{{v.nome}}</td>
             <td>{{v.valor}}</td>
             <td><button class="btn btn-primary" (click)="selecionarProduto(indice)">Selecionar</button></td>
+        </tr>
+        <tr *ngIf="vetorFiltrado.length === 0">
+          <td colspan="4">Nenhum produto encontrado.</td>
         </tr>
     </tbody>
 </table>
