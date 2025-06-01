@@ -1,6 +1,6 @@
 <!-- FORMULÁRIO -->
 <form [formGroup]="formulario">
-    <input type="number" class="form-control" formControlName="id" readonly>
+    <input type="number" class="form-control" formControlName="id" readonly *ngIf="false">
     <input type="text"   class="form-control" formControlName="nome" placeholder="Nome">
     <input type="number" class="form-control" formControlName="valor" placeholder="Valor">
     <!-- campo de pesquisa -->

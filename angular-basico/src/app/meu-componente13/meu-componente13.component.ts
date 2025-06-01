@@ -59,6 +59,22 @@ export class MeuComponente13Component {
 
   // Método para cadastrar produtos
   cadastrar(){
+    // Método para não gerar duplicidade (PRÁTICA)
+      const nomeProduto = this.formulario.value.nome;
+
+      const produtoExiste = this.vetor.some(existe => {
+        // Compare o nome do produto existente (existe.nome)
+        // com o nome que você quer cadastrar (nomeProduto)
+        // converter para minúsculas para uma comparação case-insensitive
+        return existe.nome?.toLowerCase() === nomeProduto?.toLowerCase();
+      })
+    
+      if (produtoExiste) {
+        alert('Este produto já está cadastrado!')
+        return;
+      }
+    
+    // Cadastrar
     this.servico.cadastrar(this.formulario.value as Produto)
     .subscribe(retorno => {
 
@@ -143,5 +159,8 @@ export class MeuComponente13Component {
     this.textoBusca = ''; // Limpa o termo de busca
     this.filtrarProdutos(); // Chama o método de filtro para exibir todos os produtos
   }
+
+  
+
 
 }
