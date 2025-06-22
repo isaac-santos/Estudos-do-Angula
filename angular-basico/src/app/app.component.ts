@@ -14,13 +14,14 @@ import { MeuComponente11Component } from './meu-componente11/meu-componente11.co
 import { MeuComponente12Component } from './meu-componente12/meu-componente12.component';
 import { MeuComponente13Component } from './meu-componente13/meu-componente13.component';
 import { MeuComponente14Component } from './meu-componente14/meu-componente14.component';
+import { MeuComponente15Component } from './meu-componente15/meu-componente15.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, MeuComponenteComponent, MeuComponente02Component, MeuComponente03Component, MeuComponente04Component, MeuComponente05Component, MeuComponente06Component, MeuComponente07Component, MeuComponente08Component, MeuComponente09Component, MeuComponente10Component, MeuComponente11Component,
-  MeuComponente12Component, MeuComponente13Component, MeuComponente14Component
+  MeuComponente12Component, MeuComponente13Component, MeuComponente14Component, MeuComponente15Component
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
