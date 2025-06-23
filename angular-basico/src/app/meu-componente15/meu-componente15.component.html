@@ -1,2 +1,5 @@
-<app-meu-componente15-formulario />
+<app-meu-componente15-formulario (funcao)="cadastrar($event)"/><!-- para trabalhar com envio de função, devemos usar o parenteses-->
 <app-meu-componente15-tabela [vetor]="menu"/>
+
+<!-- não sabemos o que será enviado, por isso vamos trabalhar com o $event na função -->
+ <!-- $event é utilizado para pegar o tipo de parâmetro que a função necessita -->
