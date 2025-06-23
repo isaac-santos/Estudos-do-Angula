@@ -20,7 +20,5 @@ export class MeuComponente15FormularioComponent {
   cadastrarPrato(){
     // aqui utilizamos a função criada no componente html
     this.funcao.emit(this.menu);
-
-    
   }
 }
