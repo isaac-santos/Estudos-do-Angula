@@ -7,8 +7,17 @@ import { MeuComponente15TabelaComponent } from '../meu-componente15-tabela/meu-c
   standalone: true,
   imports: [MeuComponente15FormularioComponent, MeuComponente15TabelaComponent],
   templateUrl: './meu-componente15.component.html',
-  styleUrl: './meu-componente15.component.css'
+  styleUrls: ['./meu-componente15.component.css']
 })
 export class MeuComponente15Component {
 
+
+  // Vetor
+  menu:string[] = ['arroz com feijão', 'lasanha', 'pirão de aimpim', 'ensopado'];
+
+  //Função para cadastrar comidas
+  cadastrar(nome:string)/*<--parâmetro para cadastrar*/{
+    // aqui devo fazer refência ao meu vetor de menu
+    this.menu.push(nome);// utiliza o push para adicionar dados ao vetor
+  }
 }
