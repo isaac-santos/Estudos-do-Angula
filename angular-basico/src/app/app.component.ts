@@ -16,6 +16,7 @@ import { MeuComponente13Component } from './meu-componente13/meu-componente13.co
 import { MeuComponente14Component } from './meu-componente14/meu-componente14.component';
 import { MeuComponente15Component } from './meu-componente15/meu-componente15.component';
 import { MeuComponente16Component } from './meu-componente16/meu-componente16.component';
+import { MeuComponente17Component } from './meu-componente17/meu-componente17.component';
 
 
 @Component({
@@ -23,7 +24,7 @@ import { MeuComponente16Component } from './meu-componente16/meu-componente16.co
   standalone: true,
   imports: [
     RouterOutlet, MeuComponenteComponent, MeuComponente02Component, MeuComponente03Component, MeuComponente04Component, MeuComponente05Component, MeuComponente06Component, MeuComponente07Component, MeuComponente08Component, MeuComponente09Component, MeuComponente10Component, MeuComponente11Component,
-    MeuComponente12Component, MeuComponente13Component, MeuComponente14Component, MeuComponente15Component, MeuComponente16Component
+    MeuComponente12Component, MeuComponente13Component, MeuComponente14Component, MeuComponente15Component, MeuComponente16Component, MeuComponente17Component
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
