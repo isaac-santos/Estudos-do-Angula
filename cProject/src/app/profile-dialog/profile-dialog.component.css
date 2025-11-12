@@ -1,0 +1,23 @@
+header {
+    
+}
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+
+main div {
+    border: 1px solid red;
+}
+
+footer {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+
+.custom-red-button {
+  background-color: #f44336 !important;
+  color: white !important; 
+}
