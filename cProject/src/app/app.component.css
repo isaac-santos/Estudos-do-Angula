@@ -17,9 +17,18 @@
             padding: 5px 10px;
             transition: background-color 0.3s;
         }
+
+        .mat-menu-btn {
+            color: white !important;
+        }
         
-        .container-cascate li:hover a {
+        .container-cascate li:hover button {
             background-color: #ffffff33;
+            border-radius: 4px;
+        }
+
+        .mat-menu-btn[aria-expanded="true"] { 
+            background-color: #ffffff33 !important;
             border-radius: 4px;
         }
 
@@ -49,5 +58,9 @@
             border: 3px double #FFFF;
             cursor: pointer;
         }
+
+        
     
     /* header2-nav */
+
+    

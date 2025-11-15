@@ -5,22 +5,34 @@
                 <img src="MC-cost1.jpg" alt="">
             </div>
             <ul class="container-cascate">
-                <li><a href="">modulo 1</a></li>
-                <li><a href="">modulo 1</a></li>
-                <li><a href="">modulo 1</a></li>
-                <li><a href="">modulo 1</a></li>
-                <li><a href="">modulo 1</a></li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="Operacional" class="mat-menu-btn">Operacional</button>
+                    <mat-menu #Operacional="matMenu"></mat-menu>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="Financeiro" class="mat-menu-btn">Financeiro</button>
+                    <mat-menu #Financeiro="matMenu"></mat-menu>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="Cadastro" class="mat-menu-btn">Cadastro</button>
+                    <mat-menu #Cadastro="matMenu"></mat-menu>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="Config" class="mat-menu-btn">Configuração</button>
+                    <mat-menu #Config="matMenu"></mat-menu>
+                </li>
             </ul>
         </div>
         <div id="conteiner-reverserow">
             <div>
-                <img src="null-perfil.jpg" alt="" id="perfil-img" (click)="openDialog()">
+                <img src="null-perfil.jpg" alt="" id="perfil-img" (click)="openDialog()" >
             </div>
             <div>
                 sino
             </div>
             <div>
-                dúvidas
+                <button mat-button [matMenuTriggerFor]="Duvidas" class="mat-menu-btn">Duvidas</button>
+                <mat-menu #Duvidas="matMenu"></mat-menu>
             </div>
         </div>
     </div>
