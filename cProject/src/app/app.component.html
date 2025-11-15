@@ -28,7 +28,22 @@
                 <img src="null-perfil.jpg" alt="" id="perfil-img" (click)="openDialog()" >
             </div>
             <div>
-                sino
+                <button mat-icon-button
+                 [matMenuTriggerFor]="newsMenu">
+                    
+                 <mat-icon matBadge="{{ notificationCount }}"
+                    [ngClass]="{'pulsing-badge-container': hasNotifications}"
+                    matBadgeColor="warn" 
+                    style="--mat-badge-background-color: #f44336;">notifications</mat-icon>
+                    <span class="cdk-visually-hidden">
+                        Notificação com novidades do sistema.
+                    </span>
+                </button>
+                
+                <mat-menu #newsMenu="matMenu" xPosition="before">
+                    <app-update></app-update>
+                </mat-menu>
+                <router-outlet></router-outlet>
             </div>
             <div>
                 <button mat-button [matMenuTriggerFor]="Duvidas" class="mat-menu-btn">Duvidas</button>
