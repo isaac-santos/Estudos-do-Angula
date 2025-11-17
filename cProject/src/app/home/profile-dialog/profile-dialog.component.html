@@ -1,0 +1,19 @@
+<header>
+    <h1 mat-dialog-title>Dados do usuário</h1>
+</header>
+<main>
+    <div>aqui ficará o circulo para adicionar a foto do usuário e estado de acesso dele</div>
+    <hr>
+    <div>
+        <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header>
+                <mat-panel-title> Trocar a senha </mat-panel-title>     
+            </mat-expansion-panel-header>
+            <p>Aqui terá os inputs para alteração da senha.</p>
+        </mat-expansion-panel> 
+        Aqui ficara as opções para alterar a senha e outras coisas
+    </div>
+</main>
+<footer>
+    <button mat-dialog-close mat-flat-button class="custom-red-button">Fechar</button>
+</footer>

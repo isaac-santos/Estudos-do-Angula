@@ -1,0 +1,29 @@
+.news-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-inline: 5px;
+    margin-top: 8px;
+}
+
+.news-main {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    padding-inline: 5px;
+}
+
+.news-card {
+    background-color: #FFF !important;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.news-card-btn {
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: center;
+    gap: 5px;
+    margin-right: 5px;
+}

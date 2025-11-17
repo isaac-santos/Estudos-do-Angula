@@ -1,0 +1,31 @@
+<header class="news-header">
+    <div>
+        <h6>Novidades</h6>
+    </div>
+    <div>
+        <button mat-icon-button aria-label="icone de histórico" (click)="openDialog()">
+            <mat-icon aria-hidden="false" aria-label="history icon" fontIcon="history"></mat-icon>
+        </button>
+    </div>
+</header>
+<main class="news-main">
+    <mat-card class="news-card">
+        <div>
+            <mat-card-header>titulo da modificação</mat-card-header>
+            <mat-card-content>Aqui será escrito a descrição da modificação que foi feita no sistema.</mat-card-content>
+        </div>
+        <div class="news-card-btn">
+            <button mat-icon-button aria-label="icone de confirmação">
+                <mat-icon aria-hidden="false" aria-label="verified icon" fontIcon="verified"></mat-icon>
+            </button>
+            <button mat-icon-button aria-label="icone de imagem">
+                <mat-icon aria-hidden="false" aria-label="image icon" fontIcon="image"></mat-icon>
+            </button>
+        </div>
+    </mat-card>
+    <mat-card class="news-card">
+        <mat-card-header></mat-card-header>
+        <mat-card-content></mat-card-content>
+        <mat-card-actions></mat-card-actions>
+    </mat-card>
+</main>
